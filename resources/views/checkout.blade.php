@@ -1,0 +1,6 @@
+@extends('layouts.app')
+@section('title', 'Finalizar compra')
+@section('content')
+<section class="page-banner"><div class="container"><span class="eyebrow">UN PASITO MÁS</span><h1>Finalizar compra</h1></div></section>
+<section class="container section checkout-wrap"><form class="checkout-form" method="POST" action="{{ route('checkout.store') }}">@csrf<h2>Datos de entrega</h2><div class="form-grid"><label>Nombre completo<input name="customer_name" value="{{ old('customer_name') }}" required></label><label>Correo electrónico<input type="email" name="email" value="{{ old('email') }}" required></label><label>Teléfono<input name="phone" value="{{ old('phone') }}" required></label><label>Código postal<input name="postal_code" value="{{ old('postal_code') }}" required></label><label class="wide">Dirección completa<input name="address" value="{{ old('address') }}" required></label><label class="wide">Ciudad y estado<input name="city" value="{{ old('city') }}" required></label><label class="wide">Notas (opcional)<textarea name="notes">{{ old('notes') }}</textarea></label></div><button class="btn">Confirmar pedido →</button><p class="muted">Demo: este formulario registra el pedido, pero todavía no cobra.</p></form></section>
+@endsection
